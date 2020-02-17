@@ -1,9 +1,6 @@
 # 42-rainfall
 > Security challenges focused on binaries: buffer overflows, printf insertions, shellcode injections and binary analysis. The project ressources (ISO and subject) are avaible in the 42 school intranet.
 
-## TODO
-- First flag must be level0
-
 ## Common walkthrough
 
 We use `radare2` to analyse the binary:
