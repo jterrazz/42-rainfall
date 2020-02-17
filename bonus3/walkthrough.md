@@ -1,6 +1,6 @@
 # Bonus3
 
-This program prepares two buffers, opens `.pass` with `fopen()`and copies the contents into each buffer with `fread()` . 
+This program prepares two buffers, opens `.pass` with `fopen()`and copies the contents into each buffer with `fread()`  
 Our use of `gdb` and `ltrace` is limited for this execise because of the early `fopen()` (gdb and ltrace have user permissions so the process is stopped when it tries to open the .pass owned by user end)
 
 It takes one parameter that it will use for two things:
