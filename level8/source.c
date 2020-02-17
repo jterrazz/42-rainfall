@@ -2,33 +2,39 @@
 #include <stdlib.h>
 #include <string.h>
 
-void *service;
-void *auth;
+uint32_t *service;
+uint32_t **auth;
 
 int main(int argc, char *argv[])
 {
-  char buffer[0x80];
+  int8_t buffer[0x80]; // 128
+  uint32_t temp;
 
   printf("%p, %p \n", service, auth);
-  if (!(fgets(buffer, 0x80, STDIN)))
-    return;
+  if (!(fgets(buffer, 0x80, stdin)))
+    return 0;
   
   while (1) {
     if (strncmp("auth ", buffer, 5)) {
-      auth = malloc(4);
-      *auth = 0;
+      *auth = malloc(4);
+      **auth = 0;
+
+      temp = 0xffffffff; // -1
+      if (strlen(auth) <= 30) {
+        strcpy(*auth, buffer + 5);
+      }
     }
-  // Something here
-    if (strncmp("reset", buffer, 5) {
-      free(auth);
+    if (strncmp("reset", buffer, 5)) {
+      free(*auth);
     }
-    if (strncmp("service", buffer, 6) {
+    if (strncmp("service", buffer, 6)) { // So 'servic' is working too
       strdup(buffer + 7);
     }
-// Incomplete
-    if (strncmp("login", buffer, 5) {
-      if (*(auth + 0x20)) {
-        system("/bin/sh")
+    if (strncmp("login", buffer, 5)) {
+      if (auth[0x20]) { // 32
+        system("/bin/sh");
+      } else {
+        fwrite("PasswordL\n", 1, 0xa, stdout);
       }
     }
   }
