@@ -14,6 +14,7 @@ We can overflow in during the first strcpy, to overwrite the address used as des
 #2 malloc(8)	; 0x0804A018 ; destination of strcpy argv[0]
 #3 malloc(8)	; 0x0804A028 ; 4 bytes store index 2, following 4 store malloc #4 return
 #4 malloc(8)	; 0x0804A038 ; destination of strcpy argv[1] 
+```
 
 `av[0]` will have the address of puts in the GOT with 20 padding so that the address overflows into malloc #3 and replaces the address used as parameter in the second strcpy
 `av[1]` will have the address to `m()` to be placed in the GOT
