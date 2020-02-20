@@ -13,6 +13,14 @@ We use `gdb` to debug the runtime:
 
 ## Resources
 
+### Used exploits
+
+- **Return-to-libc** (replacing the RET addr in stack)
+- **Buffer overflows** with unsecure `gets`, `strcat` and `strcpy`
+- **Format string attacks**
+- Exploits in binaries behaviour
+- Bad use of casted values
+
 ### Programs
 - `r2`: disassembly ([doc](https://radare.gitbooks.io/radare2book/visual_mode/intro.html))
 - `gdb`: runtime debugging and disassembly
