@@ -22,6 +22,7 @@ We use `gdb` to debug the runtime:
 - Bad use of casted values
 
 ### Programs
+- Using a custom docker image to get the best analysing tools from linux on mac: [See this](https://github.com/jterrazz/docker-devstation)
 - `r2`: disassembly ([doc](https://radare.gitbooks.io/radare2book/visual_mode/intro.html))
 - `gdb`: runtime debugging and disassembly
 - `readelf`
